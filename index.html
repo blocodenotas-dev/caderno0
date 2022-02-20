@@ -35,6 +35,8 @@
         width: 100vw; height: clamp( 80px, 9vw, 100px );
         margin-top: 0;
         padding-left: 2.5vw;
+        background: #ff000060;
+        backdrop-filter: blur(12px);
         box-shadow: 0 0 5px #000;
         position: fixed;
         top: 0;
@@ -95,7 +97,7 @@
 
       side_panel {
         grid-area: s;
-        background: #1f0413;
+        background: linear-gradient( 45deg, #000, #1f0413, #1f0413 );
         display: flex; flex-direction: column; justify-content: space-between; align-items: center;
         color: #fa1e4e;
         position: fixed;
