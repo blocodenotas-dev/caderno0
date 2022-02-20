@@ -19,23 +19,22 @@
           #242424,
           #424242
         );
-        background-size: 100% 100vh;
         min-height: 100vh;
         display: grid;
+        grid-template-areas: "s a a"
+                             "s b b"
+                             "s f f";
+        grid-template-rows: clamp( 80px, 9vw, 100px ) 1fr clamp( 80px, 9vw, 100px );
+        grid-template-columns: 50px 1fr 1fr;
         /* place-items: center; */
       }
 
       appbar {
+        grid-area: a;
         display: flex; justify-content: space-between; align-items: center;
         /* width: 100vw; */ height: clamp( 80px, 9vw, 100px );
         margin-top: 0;
         box-shadow: 0 0 5px #000;
-        background: linear-gradient(
-            33deg,
-            #995500,
-            darkgoldenrod,
-            gold
-          );
       }
       
       .appbar-a {
@@ -90,7 +89,39 @@
         transition: .3s ease-out;
       }
 
+      side_panel {
+        grid-area: s;
+        background: #1f0413;
+        display: flex; flex-direction: column; align-items: center;
+        color: #fa1e4e;
+        position: static;
+      }
+
+      sHead {
+        display: grid; place-items: center;
+        height: clamp( 80px, 9vw, 100px )
+      }
+
+      sBody {
+        display: flex; flex-direction: column; align-items: center;
+        font-size: 1.6rem;
+        margin-top: 2ch;
+        margin-bottom: 2ch;
+      }
+
+      sFooter {
+        display: grid; place-items: center;
+        margin-bottom: 0;
+        font-size: 1.6rem;
+        padding-top: 1ch;
+      }
+
+      span {
+        cursor: pointer;
+      }
+
       scaffold {
+        grid-area: b;
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -110,7 +141,7 @@
             box-shadow: 0 0 5px#00000035;
             width: clamp(300px, 60%, 600px ); height: clamp( 200px, 50vh, 800px );
             font-size: 1.8rem; font-weight: 800;
-        }
+      }
         glass span{
             background-image: linear-gradient(49deg, rgb(175, 0, 37), rgb(75, 12, 177) 51%, rgb(0, 148, 158));
             -webkit-text-fill-color: transparent;
@@ -127,7 +158,11 @@
         }
 
         a {  color: #ff9e00; }
-        a:hover {  color: #1f1d21; }
+        a:hover {  color: #1f1d21; } 
+
+        footer {
+          grid-area: f;
+        }
 
 
 
@@ -135,7 +170,7 @@
 
         /* 
         :host-context(html.gx) .tile-content {
-        --border: 0;
+        --border: 0; 
         --cut: 16px;
         --width: var(--speeddial-tile-width);
         --height: var(--speeddial-tile-height);
@@ -167,6 +202,27 @@
       </div>
       <div class="appbar-d"><p>&#9776;</p></div>
     </appbar>
+ 
+    <side_panel>
+      <sHead>
+          <span style="font-size: 2.5rem; color: #fa1e4e;">&#9772;</span>
+      </sHead>
+        <span>&#10603; &#10605;</span>
+      <sBody>
+          <span>&#10646;</span>
+          <span>&#12475;</span>
+          <span style="transform: rotate(90deg);">&#12540;</span>
+          <span>&#12458;</span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </sBody>
+        <span>&#10603; &#10605;</span>
+        <sFooter>
+          <span>&#12016;</span>
+          <span>&#12006;</span>
+        </sFooter>
+    </side_panel>
     
     <scaffold>
       <glass>
@@ -180,8 +236,11 @@
                 
                 
                 
+                
             </details>
       </glass>
+
+
     </scaffold>
 
 
@@ -224,7 +283,7 @@
 
     
     
-   
+    
     
     
     
