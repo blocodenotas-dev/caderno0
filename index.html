@@ -155,7 +155,7 @@
             width: clamp(300px, 60%, 600px ); height: clamp( 200px, 50vh, 800px );
             font-size: 1.8rem; font-weight: 800;
       }
-        glass span{
+        glass .texts{
             background-image: linear-gradient(49deg, rgb(175, 0, 37), rgb(75, 12, 177) 51%, rgb(0, 148, 158));
             -webkit-text-fill-color: transparent;
 
@@ -170,8 +170,8 @@
             font-size: 16px;
         }
 
-        a {  color: #ff9e00; }
-        a:hover {  color: #1f1d21; } 
+        /* a {  color: #ff9e00; }
+        a:hover {  color: #1f1d21; }  */
 
         footer {
           grid-area: f;
@@ -203,6 +203,21 @@
         		margin-right: 1.5ch;
         		font-size: 2rem;
       		}
+        }
+
+        #searchin {
+          visibility: hidden;
+          border-radius: 5rem;
+          color: #fff;
+          background: #1f1d21;
+          z-index: 5;
+          border: 5px;
+          border-bottom-color: #5c33ff;
+        }
+        #searchin span{
+          color: #ff9e00;
+          font-size: 1.3rem;
+          display: grid; place-items: center;
         }
 
 
@@ -277,14 +292,10 @@
             <details>
                 <summary>Links</summary>
                 
-                
-                
-                
-                
-                
-                
-                
             </details>
+            <a href="" id="searchin"><span>
+              o que você está procurando aqui!
+            </span></a>
       </glass>
 
 
@@ -294,7 +305,12 @@
 
 
     <script>
+      const el = document.getElementById( 'searchin' );
 
+      setTimeout( () => {
+          el.style.visibility = 'visible';
+          el.style.borderBottomColor = '#000';
+      }, 5 );
     </script>
   </body>
 </html>
